@@ -29,6 +29,7 @@ export default function BookingSection() {
   };
 
   return (
+    // reset the booking section after clicking
     <div className="mt-6 bg-white p-4 rounded-xl shadow-sm border-2 border-green-200">
       <button 
         onClick={toggleBooking}
@@ -40,7 +41,7 @@ export default function BookingSection() {
       {isOpen && (
         <div className="mt-4 pt-4 border-t border-green-100 flex flex-col items-center">
           
-          {/* 4. Hide the calendar and times if they are already booked! */}
+          {/* Hide the calendar and times if they are already booked */}
           {!isBooked && (
             <>
               <p className="text-sm text-gray-600 mb-3 text-center">
@@ -77,7 +78,7 @@ export default function BookingSection() {
                 </div>
               )}
 
-              {/* 5. The Contact Form - Only shows after picking a time */}
+              {/* Contact Form - Only shows after picking a time */}
               {date && time && (
                 <div className="mt-6 w-full animate-in fade-in zoom-in duration-300 space-y-4 text-left bg-green-50 p-4 rounded-xl border border-green-100">
                   <div className="space-y-1">
@@ -85,9 +86,9 @@ export default function BookingSection() {
                     {/* CONTROLLED INPUT: value is tied to state, onChange updates the state */}
                     <Input 
                       id="name" 
-                      placeholder="Jane Doe" 
+                      placeholder="Your Name" 
                       value={name} 
-                      onChange={(e) => setName(e.target.value)} 
+                      onChange={(e) => setName(e.target.value)}  // instantly update react state
                       className="bg-white border-green-200"
                     />
                   </div>
@@ -97,17 +98,17 @@ export default function BookingSection() {
                     <Input 
                       id="email" 
                       type="email" 
-                      placeholder="jane@example.com" 
+                      placeholder="your.email@example.com" 
                       value={email} 
                       onChange={(e) => setEmail(e.target.value)} 
                       className="bg-white border-green-200"
                     />
                   </div>
 
-                  {/* 6. Disabled button logic! Button only works if name and email are NOT empty */}
+                  {/* button only works if name and email are NOT empty */}
                   <Button 
                     className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-6 text-lg rounded-xl mt-4"
-                    disabled={name.trim() === "" || email.trim() === ""}
+                    disabled={name.trim() === "" || email.trim() === ""} // removes blank spaces
                     onClick={() => setIsBooked(true)}
                   >
                     Confirm Booking
@@ -117,7 +118,7 @@ export default function BookingSection() {
             </>
           )}
 
-          {/* 7. The Success Screen! */}
+          {/* Success Screen after isBooked is true after clicking the button */}
           {isBooked && (
             <div className="w-full text-center py-8 animate-in zoom-in duration-500">
               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
