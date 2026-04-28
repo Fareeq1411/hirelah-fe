@@ -150,7 +150,6 @@ export default function BookingSection({serviceOptions, timeSlots}) {
               <p className="text-sm text-gray-500 mt-4">A confirmation email has been sent to {email}.</p>
             </div>
           )}
-
         </div>
       )}
     </div>
