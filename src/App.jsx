@@ -9,7 +9,7 @@ import LinkDashboard from "./pages/LinkDashboard";
 function App(){
   return(
     <Routes>
-        <Route path="/" element={<ClientDashboard />}/>
+        <Route path="/dashboard" element={<ClientDashboard />}/>
         <Route path="/profile" element={<ClientProfile />}/>
         <Route path="/linkdashboard" element={<LinkDashboard />}/>
         <Route path="/login" element={<Login />}/>
