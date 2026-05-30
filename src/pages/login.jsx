@@ -18,7 +18,7 @@ function Login() {
             data = data.json();
             setNoticeMessage("Login Success!");
             setShowNotice(true);
-            navigate("/");
+            navigate("/dashboard");
         }else{
             setShowNotice(true);
             setNoticeMessage("Login Failed!");

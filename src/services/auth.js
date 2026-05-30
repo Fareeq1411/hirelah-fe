@@ -10,7 +10,7 @@ export const login = async (email, password) => {
         },
         body: JSON.stringify(
             {
-                email: email,
+                username: email,
                 password: password
             }
         )
